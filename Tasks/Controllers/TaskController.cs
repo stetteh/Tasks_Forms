@@ -7,9 +7,9 @@ using Tasks.Models;
 
 namespace Tasks.Controllers
 {
-    public class HomeController : Controller
+    public class TaskController : Controller
     {
-
+        // GET: Task
         public ActionResult Index()
         {
             List<Task> task = new List<Task>()
@@ -21,18 +21,12 @@ namespace Tasks.Controllers
             return View(task);
         }
 
-        public ActionResult About()
+        //Post Task
+        [HttpPost]
+        public ActionResult Create()
         {
-            ViewBag.Message = "Your application description page.";
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return Index();
         }
     }
 }

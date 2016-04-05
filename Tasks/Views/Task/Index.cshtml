@@ -1,0 +1,18 @@
+﻿@model System.Collections.Generic.List<Tasks.Models.Task>
+
+@{
+    ViewBag.Title = "title";
+   
+}
+
+<div class="jumbotron">
+    <h1>Tasks</h1>
+</div>
+
+<div class="row">
+    @foreach (var t in Model)
+    {
+        <li> @t.Name, @t.Description, @t.Isdone</li>
+    }
+
+</div>
