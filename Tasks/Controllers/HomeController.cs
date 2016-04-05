@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Tasks.Models;
 
 namespace Tasks.Controllers
 {
@@ -10,7 +11,13 @@ namespace Tasks.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            List<Task> task = new List<Task>()
+            {
+                new Task(1, "Seth Quaye", "Go Home", false),
+                new Task(2, "Seth Quaye", "Eat Lunch", true),
+            };
+
+            return View(task);
         }
 
         public ActionResult About()
